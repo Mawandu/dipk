@@ -1,0 +1,63 @@
+Acteurs et rôles du système
+
+1️ Administrateur (Admin)
+Rôle stratégique et central.
+    • Gère les comptes utilisateurs (inspecteurs, superviseurs, agents) donc les créent à partir de son backoffice au niveau du central.
+    • Configure les zones de surveillance pour chaque utilisateur créé.
+    • Assigne les tâches aux inspecteurs, superviseurs et agents.
+    • Valide ou déclenche officiellement l’ordre d’évacuation.
+    • Supervise les statistiques globales (nombre de signalements, interventions effectuées, temps moyen d’intervention).
+
+2️ Inspecteur
+Rôle de terrain (détection et signalement).
+    • Identifie les poubelles illégales ou pleines (celui qui prend la photo que le système détecte s’il y a poubelle ou pas).
+    • Vérifie les alertes générées par le système IA venant du central.
+    • Confirme le signalement avec photo et localisation GPS.
+    • Transmet la demande d’intervention à la centrale.
+    • Repasse pour s’assurer que la poubelle a été vidé après son signalement
+
+3️ Superviseur
+Rôle de contrôle qualité.
+    • Suit les missions assignées aux agents.
+    • Vérifie que les interventions sont réalisées correctement.
+    • Valide la preuve d’intervention (photo après vidage).
+    • Évalue la performance des agents (temps, efficacité, régularité).
+
+4️ Agent
+Rôle opérationnel.
+    • Reçoit les missions d’évacuation.
+    • Se rend sur le site indiqué.
+    • Vide la poubelle ou enlève le dépôt illégal.
+    • Soumet une preuve d’intervention (photo + statut terminé) aux superviseurs.
+ 
+ Fonctionnement :
+ 
+ Tout d'abord y a l'admin principal qui se trouve au central qui crée via une option les utilisateurs (agent, superviseur et inspecteur)
+ l'inspecteur est celui qui descend sur terrain à partir de son compte arrive à signaler les poubelles legales ou illegales, 
+ ensuite une fois que ces informations arrivents au central, cela change des couleurs de poubelles au niveau de visionnage 
+ et le central à l'emplacement exact de la poubelle car l'inspecteur envoi la photo et coordonnées GPS comme le système fonctionne actuellement
+ ensuite le centrale assigne les poubelles signalées confondues (legale et illegale) aux agents.
+ une fois poubelle assignées aux gens cette liste doit etre directement visible chez le superviseur qui se trouvent chaque centre de transit
+ donc un superviseur est assigné a un centre de transit son role est de marquer l'arrivée des agents qui viennent deposer les poubelles vidées
+ quand un agent arrive l'agent doit pointer les poubelles vidées selons leurs id attribuées par le centrale, apres avoir pointé, le superviseur valide que effectivement
+ ces poubelles ont été ramene aux centre le transit, une fois que le superviseur valide l'emplacement de ces poubelles changent des couleurs au niveau de centrale et la liste est renvoyé aux inspecteurs qui doivent aller aux emplacement où les poubelles ont été signalés comme vidés ensuite faire un etat de lieu:
+ s'il s'avere que la poubelle a ete vidé l'inspecteur velide en envoyant au centrale les coordonnées gps de la poubelle vidée de facon automatique ou manuel en ecrivant lui meme
+ une fois fait c'est alors la couleur de la poubelle redevienne à la couleur initiale et c'est une nouveau cycle qui commence pour cette poubelle là
+ Chaque centre de transit a une capacité de stockage poubelle qui est fixée et modifiable par l'admin principale une fois cela atteint donc le central doit assigner une operation 
+ d'evacuation du centre de transit vers le centre d'enfouissement et y a un autre superviseur assigné au centre d'enfouissement qui va signaler que l'agent a vidé le centre de transit lui attribué et on peut faire revenir la couleur du centre de transit à la couleur normal pour reprendre le cycle au debut.
+ la couleur du centre de transit change au fur et à mesure qu'on s'approche de sa capacité pleine, mais aussi le superviseur assigné à centre de transit peut faire denclacher le processus d'evacuation de son centre une fois qu'il voit c'est plein malgré que le central n'a pas encore vu ça et la couleur de ce centre de transit doit changer en alerte d'urgence pour evacuation.
+ et un inspecteur doit passer au centre de transit pour confirmer que le centre de transit a été vidé avec qu'on puisse recommencer le cycle. donc le centre de transit vidé doit apparaitre aussi chez l'inspecteur.
+ 
+ actuelement nous avons 7 centre de transit et un centre d'enfouissement où tout le 7 centre de transit doivent être vidé quand il faut 
+ et à chaque fois qu'une poubelle est signalé a être vidé le système doit proposer à l'agent le centre de transit le plus proche de la poubelle ( mais cela peut arriver que l'agent a pris ou vidé 4 poubelles se trouvant sur la meme route) donc l'agent va appuyer sur chercher le centre de transit le plus proche lors qu'il prend le dernier poubelle de son
+ itineraire à cet instant là il doit se localiser ou entrer manuellement les coordonnées GPS et le système doit etre capable de calculer la distance et lui trouver le chemin le plus court et lui tracé ça en suivant biensur le chemin praticable.
+ 
+ avant d'implementer ça il faut changer le frontend utiliser next js par exemple à la place de streamlit pour le dashboard
+ et aussi les centres de transit et centre d'enfouissement se trouve dans le fichier changes(11).osc donc il faut faire fusionner ça avec le le fichier principal changes.osc
+ mais créer une difference entre poubelle, centre de transit et centre d'enfouissement
+ refaire le dashboard du centrale donc de l'admin pour etre capable de visionner les tout et faire tout ce qu'on vient de voir pou ajout là.
+ 
+ dans la création des comptes utilisateurs l'admin a que les champs nom, choisir type utilisateur, sexe, son numéro de telephone, age, et son mot de passe, et nom d'utilsateur
+ car l'admin doit communiquer à l'utilisateur son nom d'utilisateur et son mot de passe pour se connecter afin de pouvoir voir tout ce qu'on a dit là.
+ 
+ 
