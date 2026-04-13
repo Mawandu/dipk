@@ -355,28 +355,28 @@ NEXT_PUBLIC_API_URL=http://127.0.0.1:8000
 
 ### Backend API
 ```bash
-cd /home/hamba/DIPK
+cd /.../DIPK
 source venv/bin/activate
 uvicorn backend.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
 ### Application Mobile
 ```bash
-cd /home/hamba/DIPK/mobile_app
+cd /.../DIPK/mobile_app
 npx react-native start
 npx react-native run-android
 ```
 
 ### Dashboard Web
 ```bash
-cd /home/hamba/DIPK/web_dashboard
+cd /.../DIPK/web_dashboard
 npm run dev
 # → http://localhost:3000
 ```
 
 ### Initialisation Base de Données (première fois)
 ```bash
-cd /home/hamba/DIPK
+cd /.../DIPK
 python database_setup.py
 python import_bins.py
 python import_transit_data.py
