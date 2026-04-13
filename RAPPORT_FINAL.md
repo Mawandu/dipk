@@ -1,5 +1,5 @@
 # DIPK – Rapport Final du Projet
-## Système Intelligent de Gestion et de Collecte des Déchets Urbains à Hanoï
+## Système Intelligent de Gestion et de Collecte des Déchets Urbains à Kinshasa
 
 > **Version :** 2.0  
 > **Date :** Mars 2026  
