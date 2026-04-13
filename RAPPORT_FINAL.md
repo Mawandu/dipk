@@ -49,7 +49,7 @@ DIPK est un système intégré de gestion des déchets urbains conçu pour la vi
 | Framework API | FastAPI | 0.128.0 |
 | Serveur ASGI | Uvicorn | 0.40.0 |
 | Authentification | JWT (python-jose + passlib[bcrypt]) | — |
-| IA Détection Déchets | YOLOv8 (Ultralytics) | 8.4.5 |
+| IA Détection Déchets | YOLOv26 (Ultralytics) | 26 |
 | Deep Learning | PyTorch + CUDA (GPU) | 2.9.1 |
 | Vision par Ordinateur | OpenCV | 4.12.0 |
 | ORM / Driver DB | Psycopg2-binary | 2.9.11 |
