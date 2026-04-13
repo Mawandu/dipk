@@ -131,7 +131,7 @@ DIPK/
 │
 ├── database_setup.py           # Initialisation schéma DB + import OSC
 ├── import_bins.py              # Import des poubelles OpenStreetMap
-├── import_transit_data.py      # Import des centres de transit Hanoï
+├── import_transit_data.py      # Import des centres de transit Kinshasa
 ├── changes.osc                 # Données OSM (noeuds poubelles)
 ├── best.pt                     # Modèle YOLO - détection poubelles
 ├── little_best.pt              # Modèle YOLO - détection bouteilles plastiques
