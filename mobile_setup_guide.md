@@ -26,9 +26,6 @@ Le plus simple est d'installer **Android Studio** qui installe tout automatiquem
 ## 3. Configurer les variables d'environnement
 Crée un fichier `local.properties` dans le dossier android de l'application pour indiquer où est le SDK.
 
-Je vais le faire pour toi si tu me donnes le chemin, mais par défaut c'est souvent :
-`/home/hamba/Android/Sdk`
-
 Une fois Android Studio installé, tu dois accepter les licences SDK via l'interface ou en ligne de commande.
 
 ## 4. Configurer l'Émulateur ou Connexion USB
